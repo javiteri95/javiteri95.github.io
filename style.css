@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+
+
+
+body{
+	line-height: 0.5;
+	font-family: 'Lato', sans-serif;
+}
+
+
+header{
+	margin-left: 30% ;
+}
+
+table{
+	margin-left: 30% ;
+	padding-top: 20px ;
+}
+
+th{
+	color: #E2794B ;
+	padding-right: 60px;
+	padding-top: 20px;
+	vertical-align: top;
+}
+
+td{
+	vertical-align: top;
+}
+
+a{
+	color: #FF7C24 ;
+    text-decoration: none ;
+}
+
+
+.tipo1 {
+	font-weight: bolder;
+}
+
+.tipo2 {
+	font-weight: bold;
+}
+
+.tipo4 {
+	color : gray ;
+}
+
