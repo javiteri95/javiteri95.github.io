@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #EEEEEE;
+  --color-primary: #1F6F5F;
+  --color-secondary: #2FA084;
+  --color-highlight: #6FCF97;
+}
+
+/* :root {
+  --color-background: #FFF2E0;
+  --color-primary: #898AC4;
+  --color-secondary: #A2AADB;
+  --color-highlight: #C0C9EE;
+} */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: #1a1a1a;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-secondary text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 hover:bg-primary hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-primary text-primary font-semibold px-6 py-3 rounded-lg transition-all duration-200 hover:bg-primary hover:text-white hover:scale-105 active:scale-95;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold text-primary mb-2;
+  }
+
+  .section-divider {
+    @apply w-12 h-1 bg-highlight rounded-full mb-8;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+  }
+
+  .tag {
+    @apply inline-block text-xs font-mono font-medium bg-highlight/20 text-primary px-3 py-1 rounded-full;
+  }
+}
