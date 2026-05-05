@@ -18,6 +18,13 @@
   --color-highlight: #C0C9EE;
 } */
 
+/* :root {
+    --color-background: #BDE8F5;
+    --color-primary: #0F2854;
+    --color-secondary: #1C4D8D;
+    --color-highlight: #4988C4;
+} */
+
 html {
   scroll-behavior: smooth;
 }
