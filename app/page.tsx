@@ -293,8 +293,11 @@ function NavBar() {
   return (
     <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm border-b border-gray-200">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <span className="font-mono text-primary font-semibold text-sm tracking-tight">
+        {/* <span className="font-mono text-primary font-semibold text-sm tracking-tight">
           jviteri<span className="text-highlight">.</span>dev
+        </span> */}
+        <span className="font-mono text-primary font-semibold text-sm tracking-tight">
+          <span className="text-highlight"></span>
         </span>
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
@@ -363,7 +366,7 @@ function HeroSection() {
               <GithubIcon />
             </a>
             <a
-              href="https://linkedin.com/in/josevitericuenca"
+              href="https://linkedin.com/in/josé-viteri"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-primary transition-colors"
@@ -609,7 +612,7 @@ function ContactSection() {
             <GithubIcon />
           </a>
           <a
-            href="https://linkedin.com/in/josevitericuenca"
+            href="https://linkedin.com/in/josé-viteri"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
