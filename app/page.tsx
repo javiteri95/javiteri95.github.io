@@ -160,11 +160,24 @@ const education = [
   },
 ];
 
+const certifications = [
+  {
+    title: 'Machine Learning in Python with Scikit-Learn',
+    institution: 'France Université Numérique',
+    period: 'May 2022',
+  },
+  {
+    title: 'C++ for C Programmers',
+    institution: 'University of California Santa Cruz',
+    period: 'Aug 2020',
+  },
+];
+
 const projects = [
   {
     title: 'Brain WMH Segmentation (Medical AI)',
     description:
-      'Developed a Swim U-Net Deep Learning model to automatically detect and segment White Matter Hyperintensities in brain MRI scans. Published at IEEE ANDESCON 2022 and HEALTHINF 2021.',
+      'Developed a Swin U-Net Deep Learning model to automatically detect and segment White Matter Hyperintensities in brain MRI scans. Published at IEEE ANDESCON 2022 and HEALTHINF 2021.',
     image: '/images/logos/espol_complete.png',
     tags: ['PyTorch', 'Medical AI', 'IEEE Publication'],
     link: null,
@@ -189,7 +202,7 @@ const projects = [
 
 const publications = [
   {
-    title: 'Automatic Brain White Matter Hyperintensities Segmentation with Swim U-Net',
+    title: 'Automatic Brain White Matter Hyperintensities Segmentation with Swin U-Net',
     venue: 'IEEE ANDESCON',
     year: '2022',
     pdf: '/pdfs/papers/Automatic_Brain_White_Matter_Hyperintensities_Segmentation_with_Swin_U-Net.pdf',
@@ -406,9 +419,9 @@ function HeroSection() {
       <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-200 rounded-2xl overflow-hidden shadow-sm">
         {[
           { value: '8+', label: 'Years experience' },
-          { value: '3', label: 'IEEE publications' },
-          { value: '7+', label: 'Companies worked at' },
-          { value: 'C1', label: 'English proficiency' },
+          { value: '3', label: 'Publications' },
+          { value: '8+', label: 'Companies worked at' },
+          { value: 'C2/C1', label: 'English proficiency' },
         ].map((stat) => (
           <div key={stat.label} className="bg-white px-6 py-6 text-center">
             <p className="text-3xl font-bold text-primary">{stat.value}</p>
@@ -496,6 +509,31 @@ function EducationSection() {
   );
 }
 
+function CertificationsSection() {
+  return (
+    <section className="max-w-5xl mx-auto px-6 py-20">
+      <h2 className="section-title">Certifications</h2>
+      <div className="section-divider" />
+      <div className="grid sm:grid-cols-2 gap-4">
+        {certifications.map((cert) => (
+          <div key={cert.title} className="card p-6 flex items-start gap-4">
+            <div className="w-10 h-10 flex-shrink-0 rounded-lg bg-highlight/20 flex items-center justify-center">
+              <span className="text-lg">🎓</span>
+            </div>
+            <div className="flex-1">
+              <p className="font-semibold text-gray-900 leading-snug">{cert.title}</p>
+              <p className="text-sm text-secondary font-medium mt-1">{cert.institution}</p>
+            </div>
+            <span className="font-mono text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border border-gray-100 whitespace-nowrap self-start">
+              {cert.period}
+            </span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function PublicationsSection() {
   return (
     <section className="max-w-5xl mx-auto px-6 py-20">
@@ -550,11 +588,11 @@ function StackSection() {
       {/* Full skill lists */}
       <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
         {[
-          { category: 'ML / Data Engineering', items: 'XGBoost · LightGBM · Sklearn · Optuna · Pandas · NumPy · Matplotlib · Airflow · LangChain · Spark' },
-          { category: 'Languages', items: 'Python · TypeScript · Go · Java · C++ · Bash' },
+          { category: 'ML / Data Engineering', items: 'XGBoost · LightGBM · Sklearn · Keras · PyTorch · Optuna · Pandas · NumPy · Matplotlib · Airflow · LangChain · Spark' },
+          { category: 'Languages', items: 'Python · TypeScript · JavaScript (Node.js, Express) · Go · Java · C++ · C · Bash' },
           { category: 'Databases', items: 'PostgreSQL · MySQL · MongoDB · Redis · Snowflake' },
           { category: 'Web Frameworks', items: 'FastAPI · Django · Flask · Gin · Express · React · Vue' },
-          { category: 'Infrastructure', items: 'Docker · Kubernetes · Kafka · AWS · HPC · Linux · Git' },
+          { category: 'Infrastructure', items: 'Docker · Kubernetes · Kafka · AWS · HPC · Linux · Git · LaTeX' },
           { category: 'Research', items: 'Deep Learning · Computer Vision · Medical AI · RAG · Distributed Systems' },
         ].map((group) => (
           <div key={group.category} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
@@ -647,6 +685,7 @@ export default function Home() {
         <ExperienceSection primary={experience} additional={additionalExperience} />
         <ProjectsSection />
         <EducationSection />
+        <CertificationsSection />
         <PublicationsSection />
         <StackSection />
       </main>
